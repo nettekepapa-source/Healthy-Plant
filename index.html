@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#174d38">
+  <meta name="description" content="Identifica plantas y aprende a cuidar su salud con Healthy Plant.">
+  <title>Healthy Plant | Tu guía para cuidar plantas</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Healthy Plant inicio"><span class="brand-mark">✿</span><span>Healthy<span> Plant</span></span></a>
+    <nav><a href="#como-funciona">Cómo funciona</a><a href="#analizar">Analizar planta</a><a href="#consejos">Consejos</a></nav>
+    <button class="install-btn" id="installBtn" hidden>Instalar app</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">CONECTA CON LO NATURAL</span>
+        <h1>Cuida tus plantas.<br><em>Hazlas florecer.</em></h1>
+        <p class="slogan">“La naturaleza habla, nosotros te ayudamos a entenderla”.</p>
+        <p class="hero-desc">Conoce el nombre de tus plantas, descubre cómo se encuentran y aprende qué necesitan para crecer saludables.</p>
+        <a class="primary-btn" href="#analizar">Comenzar ahora <span>↗</span></a>
+      </div>
+      <div class="hero-art" aria-label="Ilustración de una planta en maceta">
+        <div class="sun"></div><div class="plant-illustration"><span class="leaf l1"></span><span class="leaf l2"></span><span class="leaf l3"></span><span class="leaf l4"></span><span class="stem"></span><span class="pot"></span></div>
+        <div class="floating-note">🌱 <span>Crece con conocimiento</span></div>
+      </div>
+    </section>
+
+    <section class="features" id="como-funciona">
+      <div class="section-heading"><span class="eyebrow">TODO LO QUE TU PLANTA NECESITA</span><h2>Conócela por dentro y por fuera</h2></div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="feature-icon">🌿</div><h3>Identificación</h3><p>Consulta el nombre común y científico de distintas especies.</p></article>
+        <article class="feature-card"><div class="feature-icon">🩺</div><h3>Estado de salud</h3><p>Registra señales como manchas, hojas amarillas o marchitez.</p></article>
+        <article class="feature-card"><div class="feature-icon">☀️</div><h3>Cuidados ideales</h3><p>Conoce recomendaciones de luz, riego, suelo y ambiente.</p></article>
+      </div>
+    </section>
+
+    <section class="analyzer-section" id="analizar">
+      <div class="analyzer-intro">
+        <span class="eyebrow">TU CONSULTA VERDE</span>
+        <h2>¿Qué le sucede<br> a tu planta?</h2>
+        <p>Sube una fotografía y completa los datos de esta demostración escolar para obtener una ficha de orientación.</p>
+        <div class="privacy-note">🔒 Tus fotografías se procesan solo en esta demostración y no se envían a un servidor.</div>
+      </div>
+      <div class="analyzer-card">
+        <form id="plantForm">
+          <label class="upload-area" for="plantPhoto" id="uploadArea">
+            <img id="photoPreview" alt="Vista previa de tu planta" hidden>
+            <span class="upload-symbol" id="uploadSymbol">＋</span>
+            <strong id="uploadTitle">Agrega una foto de tu planta</strong>
+            <small id="uploadHint">Toca para elegir una imagen · JPG o PNG</small>
+            <input id="plantPhoto" type="file" accept="image/*" capture="environment">
+          </label>
+          <div class="form-row">
+            <label>Especie (para esta demo)
+              <select id="species" required>
+                <option value="">Selecciona una planta</option>
+                <option value="monstera">Monstera deliciosa</option>
+                <option value="sansevieria">Lengua de suegra</option>
+                <option value="pothos">Potus (Epipremnum aureum)</option>
+                <option value="suculenta">Suculenta</option>
+                <option value="aloe">Aloe vera</option>
+              </select>
+            </label>
+            <label>¿Qué observas?
+              <select id="symptom">
+                <option value="sana">Se ve saludable</option>
+                <option value="amarillas">Hojas amarillas</option>
+                <option value="manchas">Manchas en las hojas</option>
+                <option value="marchita">Hojas caídas o marchitas</option>
+                <option value="secas">Puntas secas o cafés</option>
+              </select>
+            </label>
+          </div>
+          <button class="primary-btn analyze-btn" type="submit">Analizar mi planta <span>✦</span></button>
+          <p class="demo-disclaimer">Prototipo escolar: la foto se muestra como referencia; la identificación y evaluación aún no usan inteligencia artificial.</p>
+        </form>
+        <div id="result" class="result" aria-live="polite" hidden></div>
+      </div>
+    </section>
+
+    <section class="tips-section" id="consejos">
+      <div class="section-heading"><span class="eyebrow">PEQUEÑOS HÁBITOS, GRANDES CAMBIOS</span><h2>Consejos para un jardín feliz</h2></div>
+      <div class="tips-grid">
+        <article><span>💧</span><div><h3>Riega con atención</h3><p>Revisa la humedad del sustrato antes de volver a regar.</p></div></article>
+        <article><span>🌤️</span><div><h3>Busca su lugar ideal</h3><p>Cada especie necesita una cantidad diferente de luz.</p></div></article>
+        <article><span>🍃</span><div><h3>Observa sus hojas</h3><p>Los cambios de color y textura pueden ser señales tempranas.</p></div></article>
+      </div>
+    </section>
+  </main>
+  <footer><a class="brand" href="#"><span class="brand-mark">✿</span><span>Healthy<span> Plant</span></span></a><p>La naturaleza habla, nosotros te ayudamos a entenderla.</p><small>Proyecto escolar · Prototipo demostrativo</small></footer>
+  <script src="app.js"></script>
+</body>
+</html>
